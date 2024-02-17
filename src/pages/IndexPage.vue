@@ -74,7 +74,8 @@ export default defineComponent({
       lat: null,
       long: null,
       apiUrl: 'https://api.openweathermap.org/data/2.5/weather',
-      apiKey: process.env.VUE_APP_API_KEY
+      apiKey: process.env.VUE_APP_API_KEY,
+      apiKey2: process.env.VUE_APP_API_KEY2
     }
   
   },
@@ -95,7 +96,7 @@ export default defineComponent({
       this.$q.loading.show()
 
       if(this.$q.platform.is.android || this.$q.platform.is.electron){
-          this.$axios.get('https://apiip.net/api/check?accessKey=4d68c280-3d15-4be7-bdb2-05eeccd8bb26').then(response =>{
+          this.$axios.get(`https://apiip.net/api/check?accessKey=${this.apiKey2}`).then(response =>{
             console.log(response)
             this.lat = response.data.latitude
             this.long = response.data.longitude
