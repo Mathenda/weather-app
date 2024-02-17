@@ -74,7 +74,7 @@ export default defineComponent({
       lat: null,
       long: null,
       apiUrl: 'https://api.openweathermap.org/data/2.5/weather',
-      apiKey: 'c9595a1c6eef21d72720a18405083708'
+      apiKey: process.env.VUE_APP_API_KEY
     }
   
   },
